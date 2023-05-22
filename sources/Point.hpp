@@ -17,7 +17,7 @@ namespace ariel
     public:
         Point();
         Point(double, double);
-        double distance(Point &);
+        double distance(Point);
         virtual string print();
         static Point moveTowards(Point &, Point &, double);
         double getX()

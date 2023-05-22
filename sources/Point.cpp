@@ -12,7 +12,7 @@ Point::Point(double x, double y) : x(x), y(y)
 {
 }
 
-double Point::distance(Point &other)
+double Point::distance(Point other)
 {
     double resX = this->getX() - other.getX();
     double resY = this->getY() - other.getY();

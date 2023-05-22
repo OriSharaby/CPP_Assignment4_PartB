@@ -23,17 +23,15 @@ namespace ariel
 
     void Ninja ::slash(Character *target)
     {
-        Point source = this->getLocation();
-        Point destination = target->getLocation();
         if (!isAlive())
-        {
             throw runtime_error("Ninja is not alive");
-        }
+
         if (!target->isAlive())
-        {
             throw runtime_error("Target is not alive");
-        }
-        else if (isAlive() && source.distance(destination) < 1)
+
+        if (this == target)
+            throw runtime_error("Cannot attack itself");
+        if (isAlive() && this->getLocation().distance(target->getLocation()) < 1)
         {
             target->hit(40);
         }

@@ -42,11 +42,7 @@ namespace ariel
 
     bool Character::isAlive()
     {
-        if (this->getHealth() > 0)
-        {
-            return true;
-        }
-        return false;
+        return (this->health > 0);
     }
 
     double Character::distance(Character *other)

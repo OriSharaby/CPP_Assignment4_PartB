@@ -19,6 +19,9 @@ namespace ariel
         {
             return this->amountOfBullets;
         }
+        void setAmoutOfBullets(){
+            this->amountOfBullets -=1;
+        }
     };
 
 }

@@ -49,27 +49,27 @@ namespace ariel
     if (!leader->isAlive())
       leader = closestMember(this->team, leader->getLocation());
 
-    Character *victim = nullptr;
+    Character *target = nullptr;
 
     if (other->stillAlive() > 0)
-      victim = closestMember(other->team, leader->getLocation());
+      target = closestMember(other->team, leader->getLocation());
     else
       return;
 
-    for (auto fighter : team)
+    for (auto member : team)
     {
-      if (fighter != nullptr && fighter->isAlive())
+      if (member != nullptr && member->isAlive())
       {
-        if (victim != nullptr && victim->isAlive())
+        if (target != nullptr && target->isAlive())
         {
-          fighter->attack(victim);
+          member->attack(target);
         }
         else
         {
-          victim = closestMember(other->team, leader->getLocation());
-          if (victim != nullptr && victim->isAlive())
+          target = closestMember(other->team, leader->getLocation());
+          if (target != nullptr && target->isAlive())
           {
-            fighter->attack(victim);
+            member->attack(target);
           }
         }
       }

@@ -36,9 +36,12 @@ namespace ariel
         {
             throw runtime_error("Target is not alive");
         }
+        if (this == target)
+            throw runtime_error("Cannot attack itself");
         if (this->hasboolets())
         {
-            target->hit(40);
+            target->hit(10);
+            setAmoutOfBullets();
         }
     }
 

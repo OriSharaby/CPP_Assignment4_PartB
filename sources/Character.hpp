@@ -21,7 +21,7 @@ namespace ariel
         bool isAlive();
         double distance(Character *);
         void hit(int);
-        virtual string print();
+        virtual string print() = 0;
         virtual void attack(Character *enemy) = 0;
         bool getInTeam()
         {
